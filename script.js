@@ -1,26 +1,42 @@
+const progress = document.getElementById('progress');
+const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
-const line1 = document.getElementById('line-1');
-const step2 = document.getElementById('step-2');
+const circles = document.querySelectorAll('.circle');
 
-let activeElNumber;
+let currentActive = 1;
 
-const steps = document.querySelectorAll('.step');
-const stepsArr = Array.from(steps);
+const update = () => {
+  circles.forEach((circle, index) => {
+    // circle.classList.remove('active');
 
-nextBtn.addEventListener('click', () => {
-  const activeElement = stepsArr.find(element =>
-    element.classList.contains('active')
-  );
-
-  activeElNumber = activeElement.textContent - 1;
-
-  stepsArr.forEach((element, i) => {
-    element.classList.remove('active');
+    if (index < currentActive) {
+      circle.classList.add('active');
+    }
   });
 
-  if (activeElNumber < stepsArr.length) {
-    stepsArr[activeElNumber + 1].classList.add('active');
-  } else return;
+  const actives = document.querySelectorAll('.active');
+  console.log(actives.length, circles.length);
 
-  line1.classList.add('active-line');
+  const fraction = (actives.length / circles.length) * 100;
+  progress.style.width = fraction + '%';
+};
+
+nextBtn.addEventListener('click', () => {
+  currentActive++;
+
+  if (currentActive > circles.length) {
+    currentActive = circles.length;
+  }
+
+  update();
+});
+
+prevBtn.addEventListener('click', () => {
+  currentActive--;
+
+  if (currentActive < 1) {
+    currentActive = 1;
+  }
+
+  update();
 });
