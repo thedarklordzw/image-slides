@@ -51,7 +51,7 @@ body {
   transform: translateY(-50%);
   background-color: #3489db;
   height: 4px;
-  width: 33%;
+  width: 0;
   transition: all 300ms ease-in;
   z-index: -1;
 }
