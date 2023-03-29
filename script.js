@@ -1,6 +1,11 @@
-const button = document.querySelector('.btn');
-const rectangle = document.querySelector('.rectangle');
+const buttonOpen = document.getElementById('open');
+const buttonClose = document.getElementById('close');
+const container = document.querySelector('.container');
 
-button.addEventListener('click', () => {
-  rectangle.classList.add('active');
+buttonOpen.addEventListener('click', () => {
+  container.classList.add('show-nav');
+});
+
+buttonClose.addEventListener('click', () => {
+  container.classList.remove('show-nav');
 });
