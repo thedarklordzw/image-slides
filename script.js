@@ -10,8 +10,12 @@ const update = () => {
     prevBtn.disabled = false;
   }
 
-  if (currentActive === 1) {
+  if (currentActive < 1) {
     prevBtn.disabled = true;
+    nextBtn.disabled = false;
+  }
+
+  if (currentActive < circles.length) {
     nextBtn.disabled = false;
   }
 
