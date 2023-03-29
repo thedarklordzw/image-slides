@@ -16,3 +16,15 @@ body {
 
   padding: 0;
 }
+
+.rectangle {
+  background-color: cadetblue;
+  width: 200px;
+  transform: rotate(0);
+  transition: all 300ms ease-in;
+  height: 50px;
+}
+
+.active {
+  transform: rotate(50deg);
+}
