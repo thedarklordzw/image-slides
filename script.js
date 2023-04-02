@@ -24,23 +24,7 @@ const blurring = () => {
   console.log(map(load, 0, 100, 70, 0));
 
   loadingText.style.opacity = textOpacity;
-  background.style.filter = 'blur(' + map(load, 0, 100, 70, 0) + 'px)';
-
-  // if (textOpacity >= 0) {
-  //   blur = '0px';
-  // }
-
-  // if (textOpacity >= 0.75) {
-  //   blur = '17.5px';
-  // }
-  // if (textOpacity >= 0.5) {
-  //   blur = '35px';
-  // }
-  // if (textOpacity >= 0.25) {
-  //   blur = '52.5px';
-  // }
-
-  // background.style.filter = `blur(${blur})`;
+  background.style.filter = 'blur(' + map(load, 0, 100, 30, 0) + 'px)';
 };
 
 let int = setInterval(blurring, 30);
