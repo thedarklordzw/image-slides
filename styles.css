@@ -16,3 +16,22 @@ body {
 
   padding: 0;
 }
+.bg {
+  background-image: url('./images/nature.jpg');
+  background-size: 100%;
+  backface-visibility: hidden;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  z-index: -1;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  filter: blur(70px);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.loading-text {
+  font-size: 200px;
+  color: #fff;
+}
