@@ -19,10 +19,12 @@ body {
 
 h1 {
   margin: 10px;
+  font-size: 40px;
   font-weight: 400;
 }
 
 .content {
+  font-size: 30px;
   font-weight: 400;
 }
 
@@ -37,6 +39,17 @@ h1 {
   height: 200px;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.2);
+  transform: translateX(400%);
+  transition: all 0.5s ease-in;
+}
+
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+
+.box.show {
+  transform: translateX(0);
 }
 
 .box:hover {
